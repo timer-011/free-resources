@@ -1,0 +1,30 @@
+<% if(!user) { %>
+    
+    <div class="modal fade" id="resource" tabindex="-1">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content border border-primary bg-dark">
+                <div class="modal-body">
+                    <p class="text-light">Please login to share your resource!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% } else { %>
+    <div class="modal fade" id="resource" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-secondary bg-dark" style="color: #308c8c;">
+                <div class="modal-header">
+                    <h6 class="modal-title fs-5">Share your resource!</h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <%- include('./partials/input') %>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="resource-form">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>

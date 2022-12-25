@@ -1,0 +1,53 @@
+body {
+    background-color: #232729eb;
+}
+
+.list-group-item {
+    background-color: transparent;
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.card {
+    background-color: transparent;
+    border-color: rgb(0 0 0 / 38%);
+}
+input[type=checkbox] + label {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+input[type=checkbox]:checked + label {
+    height: fit-content;
+    max-height: fit-content;
+    display: inline-block;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-add {
+    fill: #0dcaf0;
+}
+
+.btn-float {
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+}
+
+.saved {
+    margin-left: 10px;
+}
+
+.header {
+    padding-bottom: 10px;
+    border-bottom: solid thin;
+    border-color: #b5b7b9f5
+
+}

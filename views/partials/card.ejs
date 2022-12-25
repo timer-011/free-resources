@@ -1,0 +1,33 @@
+<div class="card" style="width: auto;">
+  <div class="card-body">
+    <h5 class="card-title"><%= card.title %> </h5>
+    <div>
+        <% card.tags.forEach((tag) => { %>
+            <span class="badge text-bg-warning"> <%= tag %></span>
+        <% }) %>
+    </div>
+    <p class="card-text">
+        <input type="checkbox" id="des<%=card.id%>" hidden>
+        <label for="des<%=card.id%>"><%= card.description %></label>
+    </p>
+    <div>
+        <a href=" <%= card.link %> " class="card-link">Card link</a>
+
+<!-- ----------------------------------------------------------------------- -->
+
+        <form hidden action="toggle/<%=card.id%>" target="fr<%=card.id%>" id="fo<%=card.id%>">
+        </form>
+        <iframe name="fr<%=card.id%>" hidden></iframe>
+        <% if(user) { %>
+            <button form="fo<%=card.id%>" type="submit" onclick="toggle('<%=card.id%>')">
+        <%  let flag = user.saved?.some((id) => card.id == id);
+            if(flag) { %>
+                <span id="<%=card.id%>" class="badge rounded-pill text-bg-success saved">Saved</span>
+        <% } else { %>
+                <span id="<%=card.id%>" class="badge rounded-pill text-bg-secondary saved">Save</span>
+            </button>
+        <% }} %>
+
+    </div>
+  </div>
+</div>
